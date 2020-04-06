@@ -14,12 +14,15 @@ if [ "$(cat temp.sh | grep version -m1)" = "$v" ]
 then
 a=""
 else
+grep "version" -m1 temp.sh
+rm -rf script.sh s
 cd $HOME/bin && wget https://raw.githubusercontent.com/bewithgun/kscript/master/script.sh && chmod 777 *;
+ln -s $HOME/bin/$n $HOME/bin/s
 echo "Scipt updated"
 chmod 777 $HOME/bin/*
 fi
-rm -rf temp.sh
 cd -
+rm -rf temp.sh
 }
 
 n=`basename "$(realpath $0)"`
