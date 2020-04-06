@@ -1,6 +1,6 @@
 #!/bin/bash
-version=9.0
-v="v9"
+version=9.2.0
+v="v9.2.0"
 curdir=$(pwd)
 printline()
 {
@@ -20,8 +20,9 @@ else
 	chmod 777 $HOME/bin/*
 	
 fi
-cd $curdir > /dev/null 2>&1;
 rm -rf v
+cd $curdir > /dev/null 2>&1;
+
 }
 
 n=`basename "$(realpath $0)"`
