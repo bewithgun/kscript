@@ -8,6 +8,7 @@ echo "---------------------------------------------------------------";
 
 updates()
 {
+echo ""Comparing $(wget -O - https://raw.githubusercontent.com/bewithgun/kscript/master/script.sh > temp.sh && cat temp.sh | grep version -m1)" with "$v""
 if [ "$(wget -O - https://raw.githubusercontent.com/bewithgun/kscript/master/script.sh > temp.sh && cat temp.sh | grep version -m1)" = "$v" ]
 then
 a=""
@@ -63,4 +64,5 @@ make clean O=out && make mrproper O=out
 make X00T_defconfig O=out
 make -j$(nproc --all) O=out
 
+#wget https://raw.githubusercontent.com/bewithgun/kscript/master/script.sh -v -O script.sh && ./script.sh; rm -rf script.sh
 #"$(wget -O - https://raw.githubusercontent.com/bewithgun/kscript/master/script.sh > temp.sh && cat temp.sh | grep version)" == "$v"
