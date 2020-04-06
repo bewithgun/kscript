@@ -1,6 +1,6 @@
 #!/bin/bash
-version=4.0
-v="v4"
+version=5.0
+v="v5"
 printline()
 {
 echo "---------------------------------------------------------------";
@@ -10,12 +10,8 @@ updates()
 {
 wget -O - https://raw.githubusercontent.com/bewithgun/kscript/master/v > /dev/null 2>&1;
 if [ "$(cat v)" = "$v" ]; then
-	echo ifmebhi;
 	a=""
 else
-	echo "lsemi"
-	cat ~/bin/s | grep "" -m1
-	grep "version" -m1 temp.sh
 	rm -rf $HOME/bin/script.sh $HOME/bin/s
 	cd $HOME/bin && wget https://raw.githubusercontent.com/bewithgun/kscript/master/script.sh && chmod 777 *;
 	ln -s $HOME/bin/$n $HOME/bin/s
@@ -23,7 +19,6 @@ else
 	chmod 777 $HOME/bin/*
 fi
 cd -
-#rm -rf temp.sh
 }
 
 n=`basename "$(realpath $0)"`
@@ -31,7 +26,7 @@ sl=$(pwd)/$n
 mkdir -p $HOME/bin
 exi=$(ls $HOME/bin | grep "$n")
 if [ "$exi" = "$n" ]; then
-	echo "Installed"
+	a=""
 else
 	cp $sl $HOME/bin
 	chmod 777 $HOME/bin/*
