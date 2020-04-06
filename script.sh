@@ -1,6 +1,6 @@
 #!/bin/bash
 version=10.0
-v="v10.0"
+v="v10"
 curdir=$(pwd)
 printline()
 {
