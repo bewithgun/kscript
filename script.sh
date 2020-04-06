@@ -49,6 +49,7 @@ export arm32=$(find $(pwd) -name *-gcc | grep bin/arm-linux-androideabi-gcc -m1)
 export CROSS_COMPILE_ARM32=${arm32%gcc}
 export KBUILD_BUILD_USER="incinerator"
 export KBUILD_BUILD_HOST="incinerated-laptop"
+export ARCH=arm64
 
 printline
 mkdir -p ~/.tmpdata
