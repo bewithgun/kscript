@@ -1,6 +1,6 @@
 #!/bin/bash
 version=3.0
-v="3"
+v="v3"
 printline()
 {
 echo "---------------------------------------------------------------";
@@ -8,11 +8,12 @@ echo "---------------------------------------------------------------";
 
 updates()
 {
-wget -O - https://raw.githubusercontent.com/bewithgun/kscript/master/v > temp.sh > /dev/null 2>&1;
+wget -O - https://raw.githubusercontent.com/bewithgun/kscript/master/v > /dev/null 2>&1;
 if [ "$(cat temp.sh)" = "$v" ]; then
-	echo $v;
+	echo ifmebhi;
 	a=""
 else
+	echo "lsemi"
 	cat ~/bin/s | grep "" -m1
 	grep "version" -m1 temp.sh
 	rm -rf $HOME/bin/script.sh $HOME/bin/s
@@ -22,7 +23,7 @@ else
 	chmod 777 $HOME/bin/*
 fi
 cd -
-rm -rf temp.sh
+#rm -rf temp.sh
 }
 
 n=`basename "$(realpath $0)"`
