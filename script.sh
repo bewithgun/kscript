@@ -1,6 +1,6 @@
 #!/bin/bash
 version=3.0
-v="version=3.0"
+v="3"
 printline()
 {
 echo "---------------------------------------------------------------";
@@ -8,9 +8,8 @@ echo "---------------------------------------------------------------";
 
 updates()
 {
-echo $v
-wget -O - https://raw.githubusercontent.com/bewithgun/kscript/master/script.sh > temp.sh > /dev/null 2>&1;
-if [ "$(cat temp.sh | grep version -m1)" = "$v" ]; then
+wget -O - https://raw.githubusercontent.com/bewithgun/kscript/master/v > temp.sh > /dev/null 2>&1;
+if [ "$(cat temp.sh)" = "$v" ]; then
 	echo $v;
 	a=""
 else
