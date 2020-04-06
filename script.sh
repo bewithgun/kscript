@@ -1,6 +1,6 @@
 #!/bin/bash
-version=1.0
-v="version=1.0"
+version=2.0
+v="version=2.0"
 printline()
 {
 echo "---------------------------------------------------------------";
@@ -16,6 +16,7 @@ a=""
 else
 cd $HOME/bin && wget https://raw.githubusercontent.com/bewithgun/kscript/master/script.sh && chmod 777 *;
 echo "Scipt updated"
+chmod 777 $HOME/bin/*
 fi
 rm -rf temp.sh
 cd -
