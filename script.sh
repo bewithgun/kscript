@@ -1,6 +1,6 @@
 #!/bin/bash
-version=6.0
-v="v6"
+version=7.0
+v="v7"
 printline()
 {
 echo "---------------------------------------------------------------";
@@ -17,8 +17,10 @@ else
 	ln -s $HOME/bin/$n $HOME/bin/s
 	echo "Scipt updated"
 	chmod 777 $HOME/bin/*
+	
 fi
 cd - > /dev/null 2>&1;
+rm -rf v
 }
 
 n=`basename "$(realpath $0)"`
