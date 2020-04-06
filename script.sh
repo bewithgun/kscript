@@ -1,6 +1,6 @@
 #!/bin/bash
-version=3.0
-v="v3"
+version=4.0
+v="v4"
 printline()
 {
 echo "---------------------------------------------------------------";
@@ -9,7 +9,7 @@ echo "---------------------------------------------------------------";
 updates()
 {
 wget -O - https://raw.githubusercontent.com/bewithgun/kscript/master/v > /dev/null 2>&1;
-if [ "$(cat temp.sh)" = "$v" ]; then
+if [ "$(cat v)" = "$v" ]; then
 	echo ifmebhi;
 	a=""
 else
