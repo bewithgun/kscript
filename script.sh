@@ -1,6 +1,6 @@
 #!/bin/bash
-version=9.2.0
-v="v9.2.0"
+version=9.3.0
+v="v9.3.0"
 curdir=$(pwd)
 printline()
 {
@@ -12,7 +12,9 @@ updates()
 wget https://raw.githubusercontent.com/bewithgun/kscript/master/v > /dev/null 2>&1;
 if [ "$(cat v)" = "$v" ]; then
 	a=""
+	rm -rf v
 else
+	rm -rf v
 	rm -rf $HOME/bin/script.sh $HOME/bin/s
 	cd $HOME/bin && wget https://raw.githubusercontent.com/bewithgun/kscript/master/script.sh && chmod 777 *;
 	ln -s $HOME/bin/$n $HOME/bin/s
@@ -20,7 +22,7 @@ else
 	chmod 777 $HOME/bin/*
 	
 fi
-rm -rf v
+
 cd $curdir > /dev/null 2>&1;
 
 }
@@ -47,7 +49,7 @@ updates
 export aarch64=$(find $HOME -name *-gcc | grep bin/aarch64-linux-android-gcc -m1)
 export gcc="gcc"
 export CROSS_COMPILE=${aarch64%gcc}
-export arm32=$(find $(pwd) -name *-gcc | grep bin/arm-linux-androideabi-gcc -m1)
+export arm32=$(find $HOME -name *-gcc | grep bin/arm-linux-androideabi-gcc -m1)
 export CROSS_COMPILE_ARM32=${arm32%gcc}
 export KBUILD_BUILD_USER="incinerator"
 export KBUILD_BUILD_HOST="incinerated-laptop"
