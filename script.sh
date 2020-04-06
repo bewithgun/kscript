@@ -1,6 +1,6 @@
 #!/bin/bash
-verison=1.0
-v="verison=1.0"
+version=1.0
+v="version=1.0"
 printline()
 {
 echo "---------------------------------------------------------------";
@@ -14,6 +14,7 @@ then
 a=""
 else
 cd $HOME/bin && wget https://raw.githubusercontent.com/bewithgun/kscript/master/script.sh && chmod 777 *;
+echo ""Comparing $(wget -O - https://raw.githubusercontent.com/bewithgun/kscript/master/script.sh > temp.sh && cat temp.sh | grep version -m1)" with "$v""
 echo "Scipt updated"
 fi
 rm -rf temp.sh
