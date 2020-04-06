@@ -1,6 +1,6 @@
 #!/bin/bash
-version=2.0
-v="version=2.0"
+version=3.0
+v="version=3.0"
 printline()
 {
 echo "---------------------------------------------------------------";
@@ -12,10 +12,11 @@ echo $v
 wget -O - https://raw.githubusercontent.com/bewithgun/kscript/master/script.sh > temp.sh > /dev/null 2>&1;
 if [ "$(cat temp.sh | grep version -m1)" = "$v" ]
 then
+echo $v;
 a=""
 else
 grep "version" -m1 temp.sh
-rm -rf script.sh s
+rm -rf $HOME/bin/script.sh $HOME/bin/s
 cd $HOME/bin && wget https://raw.githubusercontent.com/bewithgun/kscript/master/script.sh && chmod 777 *;
 ln -s $HOME/bin/$n $HOME/bin/s
 echo "Scipt updated"
@@ -29,9 +30,8 @@ n=`basename "$(realpath $0)"`
 sl=$(pwd)/$n
 mkdir -p $HOME/bin
 exi=$(ls $HOME/bin | grep "$n")
-
 if [ "$exi" = "$n" ]; then
-	a=""
+	echo "Installed"
 else
 	cp $sl $HOME/bin
 	chmod 777 $HOME/bin/*
@@ -42,8 +42,8 @@ else
 	printline
 	echo "Installed script , now you can run script using s command"
 	printline
-	updates
 fi
+updates
 
 export aarch64=$(find $HOME -name *-gcc | grep bin/aarch64-linux-android-gcc -m1)
 export gcc="gcc"
