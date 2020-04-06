@@ -1,6 +1,7 @@
 #!/bin/bash
 version=9.0
 v="v9"
+curdir=$(pwd)
 printline()
 {
 echo "---------------------------------------------------------------";
@@ -19,7 +20,7 @@ else
 	chmod 777 $HOME/bin/*
 	
 fi
-cd - > /dev/null 2>&1;
+cd $curdir > /dev/null 2>&1;
 rm -rf v
 }
 
