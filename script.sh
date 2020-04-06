@@ -18,7 +18,7 @@ else
 	echo "Scipt updated"
 	chmod 777 $HOME/bin/*
 fi
-cd -
+cd - > /dev/null 2>&1;
 }
 
 n=`basename "$(realpath $0)"`
