@@ -8,7 +8,7 @@ echo "---------------------------------------------------------------";
 
 updates()
 {
-wget https://raw.githubusercontent.com/bewithgun/kscript/master/v;
+wget https://raw.githubusercontent.com/bewithgun/kscript/master/v > /dev/null 2>&1;
 if [ "$(cat v)" = "$v" ]; then
 	a=""
 else
