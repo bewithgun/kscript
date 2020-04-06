@@ -8,6 +8,7 @@ echo "---------------------------------------------------------------";
 
 updates()
 {
+echo $v
 echo ""Comparing $(wget -O - https://raw.githubusercontent.com/bewithgun/kscript/master/script.sh > temp.sh && cat temp.sh | grep version -m1)" with "$v""
 if [ "$(wget -O - https://raw.githubusercontent.com/bewithgun/kscript/master/script.sh > temp.sh && cat temp.sh | grep version -m1)" = "$v" ]
 then
