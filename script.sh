@@ -10,17 +10,17 @@ updates()
 {
 echo $v
 wget -O - https://raw.githubusercontent.com/bewithgun/kscript/master/script.sh > temp.sh > /dev/null 2>&1;
-if [ "$(cat temp.sh | grep version -m1)" = "$v" ]
-then
-echo $v;
-a=""
+if [ "$(cat temp.sh | grep version -m1)" = "$v" ]; then
+	echo $v;
+	a=""
 else
-grep "version" -m1 temp.sh
-rm -rf $HOME/bin/script.sh $HOME/bin/s
-cd $HOME/bin && wget https://raw.githubusercontent.com/bewithgun/kscript/master/script.sh && chmod 777 *;
-ln -s $HOME/bin/$n $HOME/bin/s
-echo "Scipt updated"
-chmod 777 $HOME/bin/*
+	cat ~/bin/s | grep "" -m1
+	grep "version" -m1 temp.sh
+	rm -rf $HOME/bin/script.sh $HOME/bin/s
+	cd $HOME/bin && wget https://raw.githubusercontent.com/bewithgun/kscript/master/script.sh && chmod 777 *;
+	ln -s $HOME/bin/$n $HOME/bin/s
+	echo "Scipt updated"
+	chmod 777 $HOME/bin/*
 fi
 cd -
 rm -rf temp.sh
