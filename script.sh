@@ -1,12 +1,14 @@
 #!/bin/bash
-version=10.0
-v="v10"
+version=11.0
+v="v11"
 curdir=$(pwd)
 printline()
 {
 echo "---------------------------------------------------------------";
 }
-
+rm -rf v;
+rm -rf v.1;
+rm -rf v.2;
 updates()
 {
 wget https://raw.githubusercontent.com/bewithgun/kscript/master/v > /dev/null 2>&1;
